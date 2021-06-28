@@ -7,19 +7,39 @@ export default class Weather extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      country: "",
+      city: ""
     }
   }
 
-  componentDidMount() {
-    this.fetchData()
-  }
+  // componentDidMount() {
+  //   this.fetchData()
+  // }
 
   fetchData() {
-    axios.get("https://api.openweathermap.org/data/2.5/weather?q=kathmandu%2Cnepal&appid=8d2de98e089f1c28e1a22fc19a24ef04&fbclid=IwAR3CJ3uwYYJ_hWquSMmrr6HOu7IwL0RMIMfxExwp1-TOxMGIqdl3lp_X8sg")
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}%2C${this.state.country}&appid=8d2de98e089f1c28e1a22fc19a24ef04&fbclid=IwAR3CJ3uwYYJ_hWquSMmrr6HOu7IwL0RMIMfxExwp1-TOxMGIqdl3lp_X8sg`)
       .then(res => {
         this.setState({ data: res.data })
       }
       )
+      .catch(res => {
+        console.log("Hello")
+        this.setState({ data: null })
+      })
+  }
+
+  handleCountryName = (e) => {
+    this.setState({ country: e.target.value })
+  }
+
+  handleCityName = (e) => {
+    this.setState({ city: e.target.value })
+  }
+
+  getWeatherData = (e) => {
+    e.preventDefault()
+    this.fetchData()
+
   }
 
   render() {
@@ -30,14 +50,14 @@ export default class Weather extends Component {
           <div id='element-container'>
             <div>
               <label >Country Name</label> <br />
-              <input type="text" name="" value="" /><br />
+              <input type="text" name="" value={this.state.country} onChange={this.handleCountryName} /><br />
             </div>
             <div>
               <label >City Name</label><br />
-              <input type="text" name="" value="" /> <br />
+              <input type="text" name="" value={this.state.city} onChange={this.handleCityName} /> <br />
             </div>
           </div>
-          <button type="submit">Get Weather</button>
+          <button onClick={this.getWeatherData}>Get Weather</button>
         </form>
         <div>
           {
@@ -58,7 +78,7 @@ export default class Weather extends Component {
                   <Card title='Sunset' data={this.state.data.sys.sunset} />
                 </div>
               </div>
-              : null
+              : <p>No data found</p>
           }
         </div>
       </div>
