@@ -1,9 +1,9 @@
 #cards{
-  margin-top: 80px;
-  display: flex;
-  flex-direction: row;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
 }
-
+  
 #country{
   margin-top: 2rem;
 }
@@ -23,9 +23,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
 }
-
 
 #cloud{
   width: 40px;

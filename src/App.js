@@ -1,13 +1,8 @@
-import './App.css';
-// import Form from './components/Form';
-// import Cars from './components/Cars';
-import Weather from './components/Weather/Weather';
+import Weather from "./components/weather";
 
 function App() {
   return (
     <div className="App">
-      {/* <Form />
-      <Cars /> */}
       <Weather />
     </div>
   );
