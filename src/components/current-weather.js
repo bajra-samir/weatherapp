@@ -10,7 +10,10 @@ const CurrentWeather = ({ weatherData }) => {
         {weatherData?.location?.localtime}
       </p>
       <div className="icon-temp">
-        <img src={weatherData?.current?.condition.icon || WeatherPng} />
+        <img
+          src={weatherData?.current?.condition.icon || WeatherPng}
+          alt="weather-icon"
+        />
         <div className="temp-detail">
           <h1 className="weather-temp">
             {weatherData?.current?.temp_c || 0}
