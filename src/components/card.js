@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Card(props) {
+function Card(props) {
   return (
     <div id="card">
       <h4 id="title">{props.title}</h4>
@@ -8,3 +8,5 @@ export default function Card(props) {
     </div>
   );
 }
+
+export default Card;

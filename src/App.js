@@ -2,7 +2,7 @@ import Weather from "./components/weather";
 
 function App() {
   return (
-    <div className="container">
+    <div className="weather-container">
       <Weather />
     </div>
   );

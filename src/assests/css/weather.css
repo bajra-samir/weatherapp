@@ -1,37 +1,55 @@
-#cards{
-    margin-top: 80px;
-    display: flex;
-    flex-direction: row;
-}
-  
-#country{
-  margin-top: 2rem;
-}
-
-#center-div{
-  display:flex;
-  align-items: flex-end;
-  position: relative;
-  margin-top: 5rem;
-}
-
-#temp{  
-  font-size: 8rem;
-  font-weight: 300; 
-  margin-bottom: -40px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#cloud{
-  width: 40px;
-  margin-top: 2rem;
-  margin-left: 10rem;
-}
-
-#element-container{
-  display:flex;
+.wrapper{
+  padding: 24px;
+  display: flex;
   flex-direction: row;
+  gap: 14px;
+}
+
+.current-weather{
+  background-color:#315D9A ;
+  border: 1px;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-top: 24px;
+}
+
+.current-weather-label{
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.current-time{
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.icon-temp{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.icon-temp img{
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+}
+
+.weather-temp{
+  font-size: 48px;
+  line-height: 1;
+  position: relative;
+}
+
+.weather-temp sup{
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: -5px;
+}
+
+.weather-status{
+  font-size: 12px;
 }
