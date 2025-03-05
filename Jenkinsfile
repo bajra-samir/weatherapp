@@ -3,14 +3,14 @@ pipeline {
   stages {
     stage('dependency install') {
       steps {
-        sh 'yarn install'
+        sh 'npm install'
       }
     }
 
     stage('build') {
       steps {
         echo 'building the project'
-        sh 'yarn build'
+        sh 'npm run build'
       }
     }
 
